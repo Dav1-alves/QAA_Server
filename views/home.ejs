@@ -1,0 +1,18 @@
+<title>Home</title>
+<%- include('partials/header.ejs') %>
+<body>
+        <%- include('partials/menu.ejs') %>
+        <div id="forEach">
+            <%questions.forEach(question => {%>
+                <form action="/reply/<%= question.id %>" method="get">
+                    <div class="questionT">
+                        <%= question.title %>
+                        
+                        <button class="reply">Reply</button>
+                    </form>
+                </div>
+                <%})%>
+            </div>
+        </body>
+        <link rel="stylesheet" href="../CSS3/home.css">
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,54 @@
+<head><title><%= question.title %></title><link rel="stylesheet" href="../CSS3/reply.css"></head>
+<%- include('partials/header.ejs') %>
+    <body>
+        <div class="box" style="overflow-x: auto;">
+            <h2><%= question.title %></h2>
+            <p style="overflow-x: auto;"><%= question.desc %></p>
+        </div>
+        <div class="comments">
+            <hr style="border-radius: 100%; border-color: rgba(255, 255, 255, 0.473);">
+            <h2>Answers</h2>
+            <form action="/answers" method="post">
+                <input type="text" name="body" id="" class="replyTXT" placeholder="Answer this question..." autocomplete="off">
+                <button>Answers</button>
+                <input type="hidden" name="id" value="<%= question.id %>">
+            </form>
+            <div class="comment">
+                <% reply.forEach(reply => { %>
+                    <h3 style="color:#65656b;">João commented:</h3>
+                    <p><%= reply.body %></p>
+                <% }) %>
+                <!--<% reply.forEach(reply => {%>
+                    <h3 style="color:#65656b;">João commented:</h3>
+                    
+                    <p><%= reply.body %></p>
+
+
+                    app.get("/reply/:id", (req, res) => {
+    var id = req.params.id;
+    Question.findOne({
+        where: {id: id}
+    }).then(question => {
+        if(question != undefined) {
+            Reply.findAll({
+                where: {questionId: question.id}
+            }).then(reply => {
+                    res.render("reply", {
+                        question: question,
+                        reply: reply
+                    });
+            });
+        }else {
+            res.render("404")
+        }
+    })
+})
+
+
+                <% }) %>-->
+            
+            </div>
+        </div>
+        <%- include('partials/menu.ejs') %>
+    </body>
+<%- include('partials/footer.ejs') %>

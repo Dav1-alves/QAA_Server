@@ -1,0 +1,16 @@
+<head><link rel="stylesheet" href="../CSS3/question.css"><title>Question</title> </head>
+<%- include('partials/header.ejs') %>
+    <body>
+        <form class="form" method="POST" action="/saveQ">
+            <h2>QUESTION...</h2>
+            <p type="Name"><input class="boxinfo" type="text" name="title" placeholder="Nome dá pergunta" autocomplete="off" required></input></p>
+            <p type="Descrição"><textarea class="boxinfo" name="desc" placeholder="Descrição..." autocomplete="off" required></textarea></p>
+            <button>Send Question</button>
+            <div class="info">
+              <div class="mail">ArtSticks</div>
+              <div class="mail">ARTcontact@artsticks.com</div>
+            </div>
+          </form>
+        <%- include('partials/menu.ejs') %>
+    </body>
+<%- include('partials/footer.ejs') %>
