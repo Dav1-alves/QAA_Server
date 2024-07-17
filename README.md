@@ -9,7 +9,6 @@ Projeto Remake: ...
 ## Páginas
 
  - / - Inicial
- - /admin - Administração
  - /question - Página de questões
  - /reply/:id_da_questão - Responder questão
 
