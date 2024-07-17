@@ -22,7 +22,9 @@ Projeto Remake: ...
 ## Instalação do Bando de Dados
 
  - Crie o Bando de Dados
+ - Vincule o seu bando de dados no arquivo database.js em: ./database/database.js
  - Remova o comentário "Question.sync()" e "Reply.sync()" do código
+ Local onde está os comentários: ./database/Reply e question
     
 ## Melhorias
 
